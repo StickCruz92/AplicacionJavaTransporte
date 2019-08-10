@@ -26,7 +26,7 @@ public class Avion extends Transporte implements IVisualizable {
 	
 	@Override
 	public String toString() {
-		return "\n :: AVION ::" + "\n Marca: " + getMarca() + "\n Placa: " + getPlaca() + "\n Origen: " + getOrigen()
+		return "\n :: AVIÓN ::" + "\n Marca: " + getMarca() + "\n Placa: " + getPlaca() + "\n Origen: " + getOrigen()
 				+ "\n Destino: " + getDestino() + "\n N° de Pasajeros: " + getNumeroPasajeros() + "\n Precio: "
 				+ getPrecio();
 	}
