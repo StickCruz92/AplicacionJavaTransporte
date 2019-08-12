@@ -1,11 +1,20 @@
 /**
  * 
  */
-package com.quieroviajar.impl;
+package co.com.transporte.impl;
 
 /**
+ * <h1>Transporte</h1>
+ * Transporte es una clase padre abstracta
+ * <P>
+ * Esta clase esta un clase la clase base, como es abstractor
+ * no puede crease instancia. Contiene un  metodo abstractor.
+ * {@code used()} que es obligatorio implementarlo para todo aquel que pertenezca que heredan este clase padre Transporte.
+ * 
  * @author stick
- *
+ * @version 1.1
+ * @since 2019
+ * 
  */
 public abstract class Transporte {
 
@@ -26,6 +35,11 @@ public abstract class Transporte {
 		this.placa = placa;
 		this.origen = origen;
 		this.destino = destino;
+		this.numeroPasajeros = numeroPasajeros;
+		this.precio = precio;
+	}
+	
+	public Transporte(int numeroPasajeros, double precio) {
 		this.numeroPasajeros = numeroPasajeros;
 		this.precio = precio;
 	}
@@ -96,6 +110,9 @@ public abstract class Transporte {
 		return used;
 	}
 	
+	/**
+	 * {@code used()} es un metodo abstracto obligatorio y cualquier clase de herede Transporte es obligarrio implementar.
+	 * */
 	public abstract void Used();
 
 }

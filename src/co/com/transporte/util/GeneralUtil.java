@@ -1,12 +1,13 @@
-package com.quieroviajar.util;
+package co.com.transporte.util;
 
 import java.util.Scanner;
 
-public class QuieroViajarUtil {
+public class GeneralUtil {
+
+	private static Scanner sc;
 
 	public static int validateUserResponseMenu(int min, int max) {
-		//Leer la respuesta del usuario
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		
 		//Validar respuesta int
 		while(!sc.hasNextInt()) {

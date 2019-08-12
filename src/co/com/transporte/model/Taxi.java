@@ -1,56 +1,53 @@
 /**
  * 
  */
-package com.quieroviajar.model;
+package co.com.transporte.model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import com.quieroviajar.impl.IVisualizable;
-import com.quieroviajar.impl.Transporte;
+
+import co.com.transporte.impl.ITransporte;
+import co.com.transporte.impl.Transporte;
+
 /**
  * @author stick
  *
  */
-public class Bus extends Transporte implements IVisualizable {
+public class Taxi extends Transporte implements ITransporte {
 
 	private int id;
 	private int travelTime;
-
-	public Bus(String marca, String placa, String origen, String destino, int numeroPasajeros, double precio) {
+	
+	public Taxi(String marca, String placa, String origen, String destino, int numeroPasajeros, double precio) {
 		super(marca, placa, origen, destino, numeroPasajeros, precio);
 	}
-
-	public Bus() {}
-
+	
+	public Taxi() {}
+	
 	@Override
 	public String toString() {
-		return "\n :: BUS ::" + "\n Marca: " + getMarca() + "\n Placa: " + getPlaca() + "\n Origen: " + getOrigen()
+		return "\n :: TAXI ::" + "\n Marca: " + getMarca() + "\n Placa: " + getPlaca() + "\n Origen: " + getOrigen()
 				+ "\n Destino: " + getDestino() + "\n N° de Pasajeros: " + getNumeroPasajeros() + "\n Precio: "
 				+ getPrecio();
 	}
-
+	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-	
 	public int getTravelTime() {
 		return travelTime;
 	}
-
 	public void setTravelTime(int travelTime) {
 		this.travelTime = travelTime;
 	}
-
 	@Override
 	public Date iniciarViaje(Date dateoI) {
 		// TODO Auto-generated method stub
 		return dateoI;
 	}
-	
 	@Override
 	public void terminarViaje(Date dateI, Date dateF) {
 		if (dateF.getTime() > dateI.getTime()) {
@@ -58,8 +55,9 @@ public class Bus extends Transporte implements IVisualizable {
 		} else {
 			setTravelTime(0);
 		}
+		
 	}
-
+	@Override
 	public void Used() {
 		setUsed(true);
 		Date dateI = iniciarViaje(new Date());
@@ -71,18 +69,16 @@ public class Bus extends Transporte implements IVisualizable {
 		/* Terminar viaje */
 		terminarViaje(dateI, new Date());
 		System.out.println();
-		System.out.println("Termino el viaje en Bus : " + toString());
+		System.out.println("Termino el viaje en Taxi : " + toString());
 		System.out.println("Por :" + getTravelTime() + " horas");
-
+		
 	}
-
-	public static ArrayList<Bus> hacerListaBuses() {
-		ArrayList<Bus> buses = new ArrayList<>();
+	
+	public static ArrayList<Taxi> hacerListaTaxis() {
+		ArrayList<Taxi> taxis = new ArrayList<>();
 		for (int i = 1; i < 6; i++) {
-			buses.add(new Bus("Marca "+i, "Placa "+i, "Origen "+i, "Destino "+i, 10*1, 1000*i));
+			taxis.add(new Taxi("Marca "+i, "Placa "+i, "Origen "+i, "Destino "+i, 10*1, 1000*i));
 		}
-		
-		return buses;
-		
+		return taxis;
 	}
 }

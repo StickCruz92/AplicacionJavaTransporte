@@ -1,19 +1,19 @@
 /**
  * 
  */
-package com.quieroviajar.model;
+package co.com.transporte.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.quieroviajar.impl.IVisualizable;
-import com.quieroviajar.impl.Transporte;
+import co.com.transporte.impl.ITransporte;
+import co.com.transporte.impl.Transporte;
 
 /**
  * @author stick
  *
  */
-public class Avion extends Transporte implements IVisualizable {
+public class Avion extends Transporte implements ITransporte {
 
 	private int id;
 	private int travelTime;
